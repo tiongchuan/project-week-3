@@ -1,13 +1,30 @@
+import { sequelize, testConnection, School, Subject, Tutor, Student, Enrollment } from "./models/index.js";
 
-const express = require('express')
-const app = express()
-app.use(express.json());
+// Test connection with PSQL
+testConnection();
 
+// // Synchronizing all models at once
+// await sequelize.sync();
+// console.log("All models were synchronized successfully.");
 
-app.get('/', function (get, res) {
-    res.send('hello student database 2022')
-})
+// // Drop all tables
+// await sequelize.drop();
+// console.log("All tables dropped!");
 
+// Addition (Remember IIFE?)
+(async () => {
 
-const port = process.env.PORT || 3000;
-app.listen(port);
+    // Create
+    // const newSchool = await School.create({name:"Gan Eng Seng", area:"Tiong Baru", schoolCode:"1234", type:"goverment", funding:"goverment"});
+
+    // // Update 
+    // newSchool.type = "";
+    // await newSchool.save();
+
+    // // Delete 
+    // await newSchool.destroy();
+
+    // const results = await School.findAll();
+    // console.log(JSON.stringify(results));
+   
+  })();
