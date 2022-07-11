@@ -36,17 +36,10 @@ export default function (sequelize) {
                 allowNull: false,
                 field: "funding",
             },
-            createdAt: {
-                type: DataTypes.DATE,
-                field: "created_at",
-            },
-              updatedAt: {
-                type: DataTypes.DATE,
-                field: "updated_at",
-            },
         },
         {
             sequelize,
+            timestamps: false,
             modelName: "School",
             tableName: "schools",
         }

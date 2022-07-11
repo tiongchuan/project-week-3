@@ -31,17 +31,10 @@ export default function (sequelize) {
                 allowNull: false,
                 field: "hourly_rate",
             },
-            createdAt: {
-                type: DataTypes.DATE,
-                field: "created_at",
-            },
-              updatedAt: {
-                type: DataTypes.DATE,
-                field: "updated_at",
-            },
         },
         {
             sequelize,
+            timestamps: false,
             modelName: "Tutor",
             tableName: "tutors",
         }
