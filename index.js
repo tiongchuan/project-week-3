@@ -5,7 +5,7 @@ app.use(express.json());
 
 
 app.get('/', function (get, res) {
-    res.send('hello student database')
+    res.send('hello student database 2022')
 })
 
 
