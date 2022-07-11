@@ -2,7 +2,7 @@
 import Sequelize from "sequelize";
 
 // DB Connection Configuration
-const sequelize = new Sequelize("student_db", "postgres", "N0op@psql", {
+const sequelize = new Sequelize("student_db", "postgres", "", {
     host: "localhost",
     dialect: "postgres",
   });
