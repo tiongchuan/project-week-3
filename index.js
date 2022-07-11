@@ -3,9 +3,9 @@ import { sequelize, testConnection, School, Subject, Tutor, Student, Enrollment 
 // Test connection with PSQL
 testConnection();
 
-// Synchronizing all models at once
-await sequelize.sync();
-console.log("All models were synchronized successfully.");
+// // Synchronizing all models at once
+// await sequelize.sync();
+// console.log("All models were synchronized successfully.");
 
 // // Drop all tables
 // await sequelize.drop();

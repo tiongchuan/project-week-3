@@ -41,18 +41,11 @@ export default function (sequelize) {
                 allowNull: false,
                 field: "latest_score",
             },
-            createdAt: {
-                type: DataTypes.DATE,
-                field: "created_at",
-            },
-            updatedAt: {
-                type: DataTypes.DATE,
-                field: "updated_at",
-            },
         
         },
         {
             sequelize,
+            timestamps: false,
             modelName: "Enrollment",
             tableName: "enrollments",
         }
