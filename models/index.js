@@ -37,12 +37,12 @@ Enrollment.belongsTo(Student,{foreignKey: "studentId"});
 Enrollment.belongsTo(Tutor,{foreignKey: "tutorId"});
 Enrollment.belongsTo(Subject,{foreignKey: "subjectId"});
 
-  export {
-    sequelize,
-    testConnection,
-    School,
-    Subject,
-    Tutor,
-    Student,
-    Enrollment
-  }
+export {
+  sequelize,
+  testConnection,
+  School,
+  Subject,
+  Tutor,
+  Student,
+  Enrollment
+};

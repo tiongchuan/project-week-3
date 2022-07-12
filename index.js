@@ -1,4 +1,5 @@
 import { sequelize, testConnection, School, Subject, Tutor, Student, Enrollment } from "./models/index.js";
+import app from './routes/index.js';
 
 // Test connection with PSQL
 testConnection();
@@ -11,20 +12,23 @@ testConnection();
 // await sequelize.drop();
 // console.log("All tables dropped!");
 
-// Addition (Remember IIFE?)
-(async () => {
+// (async () => {
 
-    // Create
-    // const newSchool = await School.create({name:"Gan Eng Seng", area:"Tiong Baru", schoolCode:"1234", type:"goverment", funding:"goverment"});
+//     Create
+//     const newSchool = await School.create({name:"Gan Eng Seng", area:"Tiong Baru", schoolCode:"1234", type:"goverment", funding:"goverment"});
 
-    // // Update 
-    // newSchool.type = "";
-    // await newSchool.save();
+//     // Update 
+//     newSchool.type = "";
+//     await newSchool.save();
 
-    // // Delete 
-    // await newSchool.destroy();
+//     // Delete 
+//     await newSchool.destroy();
 
-    // const results = await School.findAll();
-    // console.log(JSON.stringify(results));
+//     const results = await School.findAll();
+//     console.log(JSON.stringify(results));
    
-  })();
+//   })();
+
+app.listen(3000, () => {
+  console.log('Listening to port 3000...');
+})
