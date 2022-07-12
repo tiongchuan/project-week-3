@@ -65,7 +65,7 @@ async function updateTutor(tutorId, name, experience, highestEducation, hourlyRa
     await tutor.save();
     result.data = tutor;
     result.status = 200;
-    result.message = "Update successful";
+    result.message = "Tutor updated successfully";
 
     return result;
 }
@@ -90,38 +90,39 @@ async function deleteTutor(tutorId) {
     await tutor.destroy();
     result.data = tutor;
     result.status = 200;
-    result.message = "Delete successful";
+    result.message = "Tutor deleted successfully";
 
     return result;
 }
 
-// async function addTutor(name, experience, highestEducation, hourlyRate) {
+async function addTutor(name, experience, highestEducation, hourlyRate) {
 
-//     let result = {
-//         message: null,
-//         status: null,
-//         data: null,
-//     };
+    let result = {
+        message: null,
+        status: null,
+        data: null,
+    };
     
-//     const tutor = await Tutor.findByPk();
+    const tutor = await Tutor.create({name, experience, highestEducation, hourlyRate});
 
-//     tutor.name = name;
-//     tutor.experience = experience;
-//     tutor.highestEducation = highestEducation;
-//     tutor.hourlyRate = hourlyRate;
+    tutor.name = name;
+    tutor.experience = experience;
+    tutor.highestEducation = highestEducation;
+    tutor.hourlyRate = hourlyRate;
 
-//     await tutor.save();
-//     result.data = tutor;
-//     result.status = 200;
-//     result.message = "Add successful";
+    await tutor.save();
+    result.data = tutor;
+    result.status = 200;
+    result.message = "Tutor added successfully";
 
-//     return result;
-// }
+    return result;
+}
 
 
 export {
    getTutor,
    getTutors,
    updateTutor,
-   deleteTutor
+   deleteTutor,
+   addTutor
 };
