@@ -19,7 +19,7 @@ export default function (sequelize) {
             description: {
                 type: DataTypes.TEXT,
                 allowNull: false,
-                field: "area",
+                field: "description",
             },
         },
         {

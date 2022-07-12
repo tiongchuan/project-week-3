@@ -16,7 +16,7 @@ router.post("/protected/tutor/update", tutorController.update);
 // Invoke delete() in TutorController based on the route
 router.delete("/protected/tutor/delete/:tutorId", tutorController.delete);
 
-// // Invoke add() in TutorController based on the route
-// router.put("/protected/tutor/add", tutorController.add);
+// Invoke add() in TutorController based on the route
+router.put("/protected/tutor/add", tutorController.add);
 
 export default router;
