@@ -12,23 +12,6 @@ testConnection();
 // await sequelize.drop();
 // console.log("All tables dropped!");
 
-// (async () => {
-
-//     Create
-//     const newSchool = await School.create({name:"Gan Eng Seng", area:"Tiong Baru", schoolCode:"1234", type:"goverment", funding:"goverment"});
-
-//     // Update 
-//     newSchool.type = "";
-//     await newSchool.save();
-
-//     // Delete 
-//     await newSchool.destroy();
-
-//     const results = await School.findAll();
-//     console.log(JSON.stringify(results));
-   
-//   })();
-
 app.listen(3000, () => {
   console.log('Listening to port 3000...');
 })

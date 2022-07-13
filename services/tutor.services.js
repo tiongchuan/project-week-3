@@ -105,11 +105,6 @@ async function addTutor(name, experience, highestEducation, hourlyRate) {
     
     const tutor = await Tutor.create({name, experience, highestEducation, hourlyRate});
 
-    tutor.name = name;
-    tutor.experience = experience;
-    tutor.highestEducation = highestEducation;
-    tutor.hourlyRate = hourlyRate;
-
     await tutor.save();
     result.data = tutor;
     result.status = 200;

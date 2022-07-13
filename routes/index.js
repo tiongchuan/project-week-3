@@ -5,7 +5,7 @@ import generalRoutes from "./general.routes.js";
 const app = express();
 
 app.use(json()); // Enable express to parse JSON as request body.
-app.use(protectedRoutes);
 app.use(generalRoutes);
+app.use(protectedRoutes);
 
 export default app;
