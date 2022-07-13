@@ -2,15 +2,20 @@
 import Sequelize from "sequelize";
 
 // DB Connection Configuration
-const sequelize = new Sequelize("d3h7qubveh7v55", "oglzwpqmpzdpif", "b3653cf05bb38c386c12ebc0f6f5bb6f666ded86e691e21fd8f5085d28d1968d", {
-    host: "ec2-3-217-14-181.compute-1.amazonaws.com",
+const sequelize = new Sequelize("student_db", "postgres", "N0op@psql", {
+    host: "localhost",
     dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        rejectUnauthorized: false
-      }
-    }
   });
+
+  // const sequelize = new Sequelize("d3h7qubveh7v55", "oglzwpqmpzdpif", "b3653cf05bb38c386c12ebc0f6f5bb6f666ded86e691e21fd8f5085d28d1968d", {
+  //   host: "ec2-3-217-14-181.compute-1.amazonaws.com",
+  //   dialect: "postgres",
+  //   dialectOptions: {
+  //     ssl: {
+  //       rejectUnauthorized: false
+  //     }
+  //   }
+  // });
 
 // Test connection function
 async function testConnection() {
