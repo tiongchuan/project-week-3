@@ -28,3 +28,35 @@ testConnection();
     // console.log(JSON.stringify(results));
    
   })();
+
+
+
+
+//   const express = require('express')
+//   const app = express()
+//   app.use(express.json());
+
+//   app.get('/', function (get, res) {
+//     res.send('hello world')
+// })
+
+// const port = process.env.PORT || 3000;
+// app.listen(port);
+
+
+
+// const app = import('./routes/index.js');
+
+import app from "./routes/index.js"
+
+app.listen(3000, () => {
+  console.log('Listening to port 3000...');
+})
+
+
+
+
+// const app = require('./routes');
+// app.listen(3000, () => {
+//   console.log('Listening to port 3000...');
+// })
