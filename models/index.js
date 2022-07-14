@@ -8,6 +8,7 @@ import tutorModel from './tutor.model.js'
 import studentModel from './student.model.js'
 import enrollmentModel from './enrollment.model.js'
 import userModel from "./user.model.js"
+import viewEnrollmentModel from "./viewEnrollment.model.js"
 
 // Heroku DB Connection Configuration
 const sequelize = new Sequelize("d3h7qubveh7v55", "oglzwpqmpzdpif", "b3653cf05bb38c386c12ebc0f6f5bb6f666ded86e691e21fd8f5085d28d1968d", {
@@ -19,6 +20,7 @@ const sequelize = new Sequelize("d3h7qubveh7v55", "oglzwpqmpzdpif", "b3653cf05bb
     }
   }
 });
+
 
 // Test connection function
 async function testConnection() {
@@ -43,17 +45,22 @@ async function testConnection() {
     }
   }
 
+
 const School = schoolModel(sequelize);
 const Subject = subjectModel(sequelize);
 const Tutor = tutorModel(sequelize);
 const Student = studentModel(sequelize);
 const Enrollment = enrollmentModel(sequelize);
 const User = userModel(sequelize);
+const viewEnrollment = viewEnrollmentModel(sequelize);
 
 Student.belongsTo(School,{foreignKey: "schoolId"});
 Enrollment.belongsTo(Student,{foreignKey: "studentId"});
 Enrollment.belongsTo(Tutor,{foreignKey: "tutorId"});
 Enrollment.belongsTo(Subject,{foreignKey: "subjectId"});
+Student.hasMany(Enrollment, {foreignKey: "studentId"});
+Subject.hasMany(Enrollment, {foreignKey: "subjectId"});
+
 
 export {
   sequelize,
@@ -63,5 +70,7 @@ export {
   Tutor,
   Student,
   Enrollment,
-  User
+  User,
+  viewEnrollment
 };
+

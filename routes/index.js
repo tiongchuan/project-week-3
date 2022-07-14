@@ -1,3 +1,6 @@
+
+
+
 import express, { json } from "express";
 import rootRoute from "./root.route.js";
 import registerRoute from "./register.route.js";
@@ -24,3 +27,4 @@ app.use(generalRoutes);
 app.use(protectedRoutes);
 
 export default app;
+
