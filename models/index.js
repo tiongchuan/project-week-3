@@ -44,6 +44,11 @@ Enrollment.belongsTo(Student,{foreignKey: "studentId"});
 Enrollment.belongsTo(Tutor,{foreignKey: "tutorId"});
 Enrollment.belongsTo(Subject,{foreignKey: "subjectId"});
 
+//my code
+Student.hasMany(Enrollment, {foreignKey: "studentId"});
+Subject.hasMany(Enrollment, {foreignKey: "subjectId"});
+
+
   export {
     sequelize,
     testConnection,

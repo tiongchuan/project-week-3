@@ -1,8 +1,14 @@
 
-// const enrollmentService = import("../services/enrollment.service.js");
-// const enrollmentService = require("../services/enrollment.service");
 
-import { studentInSubject, addEnrollment, getEnrollment, getEnrollments, updateEnrollment, deleteEnrollment } from "../services/enrollment.services.js";
+
+import { 
+  studentToTutor,
+  studentInSubject, 
+  addEnrollment, 
+  getEnrollment, 
+  getEnrollments, 
+  updateEnrollment, 
+  deleteEnrollment } from "../services/enrollment.services.js";
 
 class EnrollmentController {
 
@@ -59,20 +65,7 @@ async createEnrollment(req,res,next){
         return res.json({ data: result.data, message: result.message });
       }
 
-    // // PUT /protected/tutor/add
-    // async add(req, res, next) {
-
-    //     if (typeof req.body.tutorId !== "number") 
-    //     {
-    //       res.status(400);
-    //       return res.json({ message: "Incorrect request data" });
-    //     }
-    
-    //     const result = await addTutor(req.body.tutorId, req.body.name, req.body.experience, req.body.highestEducation, req.body.hourlyRate);    
-    //     res.status(result.status);
-    
-    //     return res.json({ data: result.data, message: result.message }); 
-    //   }
+  
 
 
 
@@ -81,45 +74,11 @@ async createEnrollment(req,res,next){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // async deleteDriver(req, res, next) {
-
-    //     console.log(typeof req.params.driverId);
-    //     if (
-    //         typeof req.params.driverId !== "number"
-    //     ) {
-    //         res.status(400); // bad request
-    //         return res.json({ message: "Incorrect request data" });
-    //     }
-
-
-    //     const result = await driverService.deleteDriver(req.params.driverId);
-    //     res.status(result.status);
-
-    //     return res.json({ data: result.data, message: result.message });
-    // }
 
     async studentInSubject(req, res, next) {
-        // console.log(req.body.subject);
         console.log(typeof req.body.subject);
         if (typeof req.body.subject !== "string") {
-            res.status(400); // bad request
+            res.status(400); 
             return res.json({ message: "Incorrect request data" });
         }
 
@@ -129,20 +88,20 @@ async createEnrollment(req,res,next){
         return res.json({ data: result.data, message: result.message });
     }
 
-    // async studentInfo(req,res,next){
-    //     console.log(typeof req.params.name);
-    //     if (typeof req.params.subject !== "string") {
-    //         res.status(400); // bad request
-    //         return res.json({ message: "Incorrect request data" });
-    //     }
 
-    //     const result = await enrollmentService.studentInfo(req.params.name);
-    //     res.status(result.status);
+    async studentToTutor(req, res, next) {
+      console.log(typeof req.body.tutor);
+      if (typeof req.body.tutor !== "string") {
+          res.status(400); 
+          return res.json({ message: "Incorrect request data" });
+      }
 
-    //     return res.json({ data: result.data, message: result.message });
+      const result = await studentToTutor(req.body.tutor);
+      res.status(result.status);
 
-    // }
-
+      return res.json({ data: result.data, message: result.message });
+  }
+ 
 }
 
 
