@@ -1,8 +1,8 @@
-import { getTutor, getTutors, updateTutor, deleteTutor } from "../services/tutor.services.js";
+import { getTutor, getTutors, updateTutor, deleteTutor, addTutor } from "../services/tutor.services.js";
 
 class TutorController {
 
-    // GET /general/tutor
+    // GET /general/tutor/:tutorId
     async retrieveTutor(req, res, next) {
 
     const result = await getTutor(req.params.tutorId);    

@@ -65,7 +65,7 @@ async function updateTutor(tutorId, name, experience, highestEducation, hourlyRa
     await tutor.save();
     result.data = tutor;
     result.status = 200;
-    result.message = "Update successful";
+    result.message = "Tutor updated successfully";
 
     return result;
 }
@@ -90,7 +90,7 @@ async function deleteTutor(tutorId) {
     await tutor.destroy();
     result.data = tutor;
     result.status = 200;
-    result.message = "Delete successful";
+    result.message = "Tutor deleted successfully";
 
     return result;
 }
@@ -123,5 +123,6 @@ export {
    getTutor,
    getTutors,
    updateTutor,
-   deleteTutor
+   deleteTutor,
+   addTutor
 };
