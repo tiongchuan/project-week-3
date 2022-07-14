@@ -5,7 +5,10 @@ import loginRoute from "./login.route.js";
 import protectedRoutes from "./protected.routes.js";
 import generalRoutes from "./general.routes.js";
 
+
 const app = express();
+
+
 
 // Set middleware to parses incoming JSON requests and puts the parsed data in req.body.
 app.use(express.json());
