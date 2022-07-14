@@ -45,8 +45,6 @@ async function testConnection() {
     }
   }
 
-
-
 const School = schoolModel(sequelize);
 const Subject = subjectModel(sequelize);
 const Tutor = tutorModel(sequelize);

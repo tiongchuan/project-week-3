@@ -11,3 +11,20 @@ app.listen(port, () => {
   console.log(`Listening to port ${port}...`);
 })
 
+
+//     // Update 
+//     newSchool.type = "";
+//     await newSchool.save();
+
+//     // Delete 
+//     await newSchool.destroy();
+
+//     const results = await School.findAll();
+//     console.log(JSON.stringify(results));
+   
+//   })();
+
+app.listen(3000, () => {
+  console.log('Listening to port 3000...');
+})
+
