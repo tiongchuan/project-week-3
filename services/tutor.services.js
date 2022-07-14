@@ -95,28 +95,28 @@ async function deleteTutor(tutorId) {
     return result;
 }
 
-// async function addTutor(name, experience, highestEducation, hourlyRate) {
+async function addTutor(name, experience, highestEducation, hourlyRate) {
 
-//     let result = {
-//         message: null,
-//         status: null,
-//         data: null,
-//     };
+    let result = {
+        message: null,
+        status: null,
+        data: null,
+    };
     
-//     const tutor = await Tutor.findByPk();
+    const tutor = await Tutor.findByPk();
 
-//     tutor.name = name;
-//     tutor.experience = experience;
-//     tutor.highestEducation = highestEducation;
-//     tutor.hourlyRate = hourlyRate;
+    tutor.name = name;
+    tutor.experience = experience;
+    tutor.highestEducation = highestEducation;
+    tutor.hourlyRate = hourlyRate;
 
-//     await tutor.save();
-//     result.data = tutor;
-//     result.status = 200;
-//     result.message = "Add successful";
+    await tutor.save();
+    result.data = tutor;
+    result.status = 200;
+    result.message = "Add successful";
 
-//     return result;
-// }
+    return result;
+}
 
 
 export {

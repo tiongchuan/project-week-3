@@ -45,22 +45,14 @@ class TutorController {
         return res.json({ data: result.data, message: result.message });
       }
 
-    // // PUT /protected/tutor/add
-    // async add(req, res, next) {
+     // PUT /protected/tutor/add
+    async add(req, res, next) {
 
-    //     if (typeof req.body.tutorId !== "number") 
-    //     {
-    //       res.status(400);
-    //       return res.json({ message: "Incorrect request data" });
-    //     }
+      const result = await addTutor(req.body.name, req.body.experience, req.body.highestEducation, req.body.hourlyRate);    
+      res.status(result.status);
     
-    //     const result = await addTutor(req.body.tutorId, req.body.name, req.body.experience, req.body.highestEducation, req.body.hourlyRate);    
-    //     res.status(result.status);
-    
-    //     return res.json({ data: result.data, message: result.message }); 
-    //   }
-
- 
+      return res.json({ data: result.data, message: result.message }); 
+    }
   }
 
 export default TutorController;
