@@ -79,7 +79,7 @@ async function deleteStudent(studentId) {
         data: null,
     };
     
-    const student = await Student.findByPk(tutorId);
+    const student = await Student.findByPk(studentId);
 
     if (!student) {
         result.message = `Student ID ${studentId} is not found.`;
