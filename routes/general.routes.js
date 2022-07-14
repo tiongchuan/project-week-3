@@ -1,12 +1,23 @@
 
-
-
-import express from 'express';
+import { Router } from 'express';
+import TutorController from "../controllers/tutor.controller.js";
 import EnrollmentController from '../controllers/enrollment.controller.js';
 
+const router = Router();
 
-const router = express.Router();
+router.get("/general", (req, res) => {
+    return res.send("You have called a general route");
+});
+
+// Instantiate the class
+const tutorController = new TutorController();
 const enrollmentController = new EnrollmentController();
+
+// Invoke retrieveTutor() in TutorController based on the route
+router.get("/general/tutor/:tutorId", tutorController.retrieveTutor);
+
+// Invoke retrieveTutors() in TutorController based on the route
+router.get("/general/tutors", tutorController.retrieveTutors);
 
 
 router.get("/general/enrollment/:enrollmentId",enrollmentController.retrieveEnrollment);
@@ -17,10 +28,5 @@ router.get("/general/tutor",enrollmentController.studentToTutor);
 
 router.get("/general/viewEnrollment",enrollmentController.getViewEnrollment);
 
-
-
 export default router;
-
-
-
 
