@@ -46,6 +46,7 @@ async function testConnection() {
   }
 
 
+
 const School = schoolModel(sequelize);
 const Subject = subjectModel(sequelize);
 const Tutor = tutorModel(sequelize);
@@ -53,6 +54,7 @@ const Student = studentModel(sequelize);
 const Enrollment = enrollmentModel(sequelize);
 const User = userModel(sequelize);
 const viewEnrollment = viewEnrollmentModel(sequelize);
+
 
 Student.belongsTo(School,{foreignKey: "schoolId"});
 Enrollment.belongsTo(Student,{foreignKey: "studentId"});
