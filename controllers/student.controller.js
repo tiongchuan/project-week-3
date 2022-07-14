@@ -23,13 +23,13 @@ class StudentController {
     // POST /protected/student/update
     async update(req, res, next) {
 
-      if (typeof req.body.Id !== "number") 
+      if (typeof req.body.studentId !== "number") 
       {
         res.status(400);
         return res.json({ message: "Incorrect request data" });
       }
   
-      const result = await updateStudent(req.body.name, req.body.schoolId, req.body.parent, req.body.testimony);    
+      const result = await updateStudent(req.body.studentId, req.body.name, req.body.schoolId, req.body.parent, req.body.testimony);    
       res.status(result.status);
   
   

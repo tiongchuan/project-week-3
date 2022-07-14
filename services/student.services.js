@@ -41,7 +41,7 @@ async function getStudents() {
     return result;
 }
 
-async function updateStudent(name, schoolId, parent, testimony) {
+async function updateStudent(studentId, name, schoolId, parent, testimony) {
 
     let result = {
         message: null,
@@ -57,10 +57,10 @@ async function updateStudent(name, schoolId, parent, testimony) {
         return result;
     }
 
-    // student.name = name;
-    // student.school_id = schoolId;
-    // student.parent = parent;
-    // student.testimony = testimony;
+    student.name = name;
+    student.schoolId = schoolId;
+    student.parent = parent;
+    student.testimony = testimony;
 
     await student.save();
     result.data = student;
