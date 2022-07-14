@@ -20,6 +20,8 @@ router.delete("/general/enrollment/:enrollmentId",enrollmentController.deleteEnr
 router.get("/general/class",enrollmentController.studentInSubject);
 router.get("/general/tutor",enrollmentController.studentToTutor);
 
+router.get("/general/test",enrollmentController.test1);
+
 
 
 // router.get("/general/tutor",enrollmentController.studentInfo);

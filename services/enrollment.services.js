@@ -1,5 +1,6 @@
 
-import { Enrollment, Subject, Student, Tutor, sequelize } from "../models/index.js";
+import { Enrollment, Subject, Student, Tutor, sequelize, viewEnrollment } from "../models/index.js";
+import viewEnrollmentModel from "../models/viewEnrollment.model.js";
 // import { QueryTypes } from "sequelize";
 
 
@@ -166,8 +167,21 @@ async function studentToTutor(name) {
   return result
 }
 
+async function test1() {
+  let result = {
+    message: null,
+    status: null,
+    data: null,
+  };
 
+  const test = await viewEnrollment.findAll();
+  console.log(test);
 
+  result.data = JSON.stringify(test)
+  result.status = 200;
+  result.message = `test1  `;
+  return result
+}
 
 
 
@@ -178,7 +192,8 @@ export {
   getEnrollment,
   getEnrollments,
   updateEnrollment,
-  deleteEnrollment
+  deleteEnrollment,
+  test1
 }
 
 

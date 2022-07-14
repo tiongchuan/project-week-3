@@ -33,6 +33,9 @@ import tutorModel from './tutor.model.js'
 import studentModel from './student.model.js'
 import enrollmentModel from './enrollment.model.js'
 
+import viewEnrollmentModel from "./viewEnrollment.model.js";
+const viewEnrollment = viewEnrollmentModel(sequelize)
+
 const School = schoolModel(sequelize);
 const Subject = subjectModel(sequelize);
 const Tutor = tutorModel(sequelize);
@@ -56,5 +59,6 @@ Subject.hasMany(Enrollment, {foreignKey: "subjectId"});
     Subject,
     Tutor,
     Student,
-    Enrollment
+    Enrollment,
+    viewEnrollment
   }

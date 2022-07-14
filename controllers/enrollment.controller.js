@@ -2,6 +2,7 @@
 
 
 import { 
+  test1,
   studentToTutor,
   studentInSubject, 
   addEnrollment, 
@@ -65,16 +66,6 @@ async createEnrollment(req,res,next){
         return res.json({ data: result.data, message: result.message });
       }
 
-  
-
-
-
-
-
-
-
-
-
     async studentInSubject(req, res, next) {
         console.log(typeof req.body.subject);
         if (typeof req.body.subject !== "string") {
@@ -102,6 +93,15 @@ async createEnrollment(req,res,next){
       return res.json({ data: result.data, message: result.message });
   }
  
+
+  async test1(req, res, next) {
+
+    const result = await test1();
+    res.status(result.status);
+
+    return res.json({ data: result.data, message: result.message });
+}
+
 }
 
 
