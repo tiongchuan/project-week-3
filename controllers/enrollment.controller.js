@@ -2,7 +2,7 @@
 
 
 import { 
-  test1,
+  getViewEnrollment,
   studentToTutor,
   studentInSubject, 
   addEnrollment, 
@@ -48,13 +48,13 @@ async createEnrollment(req,res,next){
     
     // POST /protected/tutor/update
     async updateEnrollment(req, res, next) {
-       
-      if (typeof req.params.enrollmentId !== "number") 
+       console.log(req.params);
+      if (typeof req.params.enrollmentId !== "string") 
       {
         res.status(400);
         return res.json({ message: "Incorrect request data" });
       }
-      const result = await updateEnrollment(req.body.Id, req.body.studentId, req.body.tutorId, req.body.subjectId, req.body.comments, req.body.latestScore, req.body.enrollmentDate);    
+      const result = await updateEnrollment( req.params.enrollmentId, req.body.studentId, req.body.tutorId, req.body.subjectId, req.body.enrollmentDate, req.body.comments, req.body.latestScore );    
       res.status(result.status);
       return res.json({ data: result.data, message: result.message });
     }
@@ -94,9 +94,9 @@ async createEnrollment(req,res,next){
   }
  
 
-  async test1(req, res, next) {
+  async getViewEnrollment(req, res, next) {
 
-    const result = await test1();
+    const result = await getViewEnrollment();
     res.status(result.status);
 
     return res.json({ data: result.data, message: result.message });

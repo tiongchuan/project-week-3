@@ -1,7 +1,7 @@
 
 import { Enrollment, Subject, Student, Tutor, sequelize, viewEnrollment } from "../models/index.js";
 import viewEnrollmentModel from "../models/viewEnrollment.model.js";
-// import { QueryTypes } from "sequelize";
+
 
 
 async function addEnrollment(studentId, tutorId, subjectId, comments, latestScore, enrollmentDate) {
@@ -58,7 +58,7 @@ async function getEnrollments() {
   return result;
 }
 
-async function updateEnrollment(enrollmentId, studentId, tutorId, subjectId, comments, latestScore, enrollmentDate) {
+async function updateEnrollment(enrollmentId,studentId, tutorId, subjectId, enrollmentDate, comments, latestScore ) {
   let result = {
     message: null,
     status: null,
@@ -70,13 +70,13 @@ async function updateEnrollment(enrollmentId, studentId, tutorId, subjectId, com
     result.status = 404;
     return result;
   }
-  enrollment.id = id;
+ 
   enrollment.studentId = studentId;
   enrollment.tutorId = tutorId;
   enrollment.subjectId = subjectId;
   enrollment.comments = comments;
   enrollment.latestScore = latestScore;
-  enrollment.enrollmentDate - enrollmentDate;
+  enrollment.enrollmentDate = enrollmentDate;
   await enrollment.save();
   result.data = enrollment;
   result.status = 200;
@@ -113,21 +113,7 @@ async function studentInSubject(name) {
     data: null,
   };
 
-  const studentInClass = await Student.findAll({
-    include: [{
-      model: Enrollment,
-      required: true,
-      attributes: [],
-      include: [{
-        model: Subject,
-        required:true,
-        attributes:[],
-        where: {
-          name:name
-        }
-      }],
-    }],
-  });
+  const studentInClass = await viewEnrollment.findAll({where: {subject:name}});
   console.log(studentInClass);
 
   result.data = JSON.stringify(studentInClass)
@@ -144,21 +130,7 @@ async function studentToTutor(name) {
     data: null,
   };
 
-  const studentInClass = await Student.findAll({
-    include: [{
-      model: Enrollment,
-      required: true,
-      attributes: [],
-      include: [{
-        model: Tutor,
-        required:true,
-        attributes:[],
-        where: {
-          name:name
-        }
-      }],
-    }],
-  });
+  const studentInClass = await viewEnrollment.findAll({ where: {tutor:name}});
   console.log(studentInClass);
 
   result.data = JSON.stringify(studentInClass)
@@ -167,7 +139,8 @@ async function studentToTutor(name) {
   return result
 }
 
-async function test1() {
+
+async function getViewEnrollment() {
   let result = {
     message: null,
     status: null,
@@ -193,7 +166,7 @@ export {
   getEnrollments,
   updateEnrollment,
   deleteEnrollment,
-  test1
+  getViewEnrollment
 }
 
 
