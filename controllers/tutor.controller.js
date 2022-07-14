@@ -53,6 +53,7 @@ class TutorController {
     
       return res.json({ data: result.data, message: result.message }); 
     }
+
   }
 
 export default TutorController;

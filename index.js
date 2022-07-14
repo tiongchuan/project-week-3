@@ -4,18 +4,15 @@ import app from './routes/index.js';
 // Test connection with PSQL
 testConnection();
 
-// // Synchronizing all models at once
-// await sequelize.sync();
-// console.log("All models were synchronized successfully.");
 
-// // Drop all tables
-// await sequelize.drop();
-// console.log("All tables dropped!");
+const port = process.env.PORT || 3000;
+app.listen(port);
 
-// (async () => {
 
-//     Create
-//     const newSchool = await School.create({name:"Gan Eng Seng", area:"Tiong Baru", schoolCode:"1234", type:"goverment", funding:"goverment"});
+app.listen(port, () => {
+  console.log(`Listening to port ${port}...`);
+})
+
 
 //     // Update 
 //     newSchool.type = "";
@@ -32,3 +29,4 @@ testConnection();
 app.listen(3000, () => {
   console.log('Listening to port 3000...');
 })
+
