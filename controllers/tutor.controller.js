@@ -45,16 +45,14 @@ class TutorController {
         return res.json({ data: result.data, message: result.message });
       }
 
-    // PUT /protected/tutor/add
+     // PUT /protected/tutor/add
     async add(req, res, next) {
-    
-        const result = await addTutor(req.body.name, req.body.experience, req.body.highestEducation, req.body.hourlyRate);    
-        res.status(result.status);
-    
-        return res.json({ data: result.data, message: result.message }); 
-      }
 
- 
+      const result = await addTutor(req.body.name, req.body.experience, req.body.highestEducation, req.body.hourlyRate);    
+      res.status(result.status);
+    
+      return res.json({ data: result.data, message: result.message }); 
+    }
   }
 
 export default TutorController;

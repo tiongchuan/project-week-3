@@ -11,7 +11,7 @@
 
 3. Endpoints for Subjects
 
-4. Edpoints for Enrollments
+4. Endpoints for Enrollments
 
 5. Adding constraints in table
 
@@ -22,3 +22,4 @@
 - alter table "enrollments" add constraint fk_tutor_id foreign key (tutor_id) references tutors(id);
 
 - alter table "enrollments" add constraint fk_subject_id foreign key (subject_id) references subjects(id);
+>>>>>>> 0a6fee70dd635023f154011bbc0e7fb674c9955d
