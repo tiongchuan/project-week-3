@@ -25,13 +25,13 @@
 - PUT /protected/subject/add
 
 5. Edpoints for Enrollments
-- GET/general/enrollment/:enrollmentId
-- GET/general/enrollments
-- GET/general/class
-- GET/general/tutor
-- PUT/protectedl/enrollment
-- POST/protected/enrollment/:enrollmentId
-- DELETE/protected/enrollment/:enrollmentId
+- GET /general/enrollment/:enrollmentId
+- GET /general/enrollments
+- GET /general/class
+- GET /general/tutor
+- PUT /protectedl/enrollment
+- POST /protected/enrollment/:enrollmentId
+- DELETE /protected/enrollment/:enrollmentId
 
 6. Adding constraints in table
 - alter table "students" add constraint fk_school_id foreign key (school_id) references schools(id);
